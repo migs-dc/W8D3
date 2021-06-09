@@ -1,9 +1,35 @@
 /* PHASE 0: Sidebar */
-
-ul > .profile-picture{
-  margin-top: -100px;
+.content-sidebar {
+  margin: -100px 0 0 0;
+  padding-bottom: 40px;
 }
 
-.content-sidebar {
-  margin-top: -100px;
+.profile-picture{
+  position: relative;
+  margin-top: -20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.name{
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.profile-info{
+  margin: 10px 0 10px 0;
+}
+
+.profile-info > p {
+  padding: 10px 0 10px 0;
+}
+
+.profile-nav ul > li {
+  padding: 5px;
+  border-top: 1px solid lightgray;
+  font-weight: bold;
+}
+
+.profile-nav > ul:last-child{
+  border-bottom: 1px solid lightgray;
 }
