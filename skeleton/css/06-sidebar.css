@@ -1,1 +1,9 @@
 /* PHASE 0: Sidebar */
+
+ul > .profile-picture{
+  margin-top: -100px;
+}
+
+.content-sidebar {
+  margin-top: -100px;
+}
