@@ -40,15 +40,9 @@ Board.DIRS = [
  * Checks if a given position is on the Board.
  */
 Board.prototype.isValidPos = function (pos) {
-  // x = pos[0];
-  // y = pos[1];
   [x, y] = pos;
-  // return (x < 0 || y < 0 || x > 7 || y > 7) ? false : true;
-  if (x < 0 || y < 0 || x > 7 || y > 7){
-    return false;
-  } else {
-    return true;
-  }
+  return (x < 0 || y < 0 || x > 7 || y > 7) ? false : true;
+  
 };
 
 /**
@@ -57,11 +51,11 @@ Board.prototype.isValidPos = function (pos) {
  */
 Board.prototype.getPiece = function (pos) {
   if(this.isValidPos(pos) === false){
-    throw 'invalid position';
+    throw new Error("Not valid pos!");
   }
   [x, y] = pos;
-  if(board[x][y]){
-    return board[x][y];
+  if (this.grid[x][y] !== undefined){
+    return this.grid[x][y];
   }
 };
 
