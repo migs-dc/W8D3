@@ -64,12 +64,23 @@ Board.prototype.getPiece = function (pos) {
  * matches a given color.
  */
 Board.prototype.isMine = function (pos, color) {
+  [x, y] = pos;
+  if (this.grid[x][y] && this.grid[x][y].color === color){
+    return true;
+  }
+  return false;
 };
 
 /**
  * Checks if a given position has a piece on it.
  */
 Board.prototype.isOccupied = function (pos) {
+  [x, y] = pos;
+  //!!this.grid[x][y]
+  if (this.grid[x][y]){
+    return true;
+  }
+  return false;
 };
 
 /**
@@ -86,6 +97,26 @@ Board.prototype.isOccupied = function (pos) {
  * Returns empty array if no pieces of the opposite color are found.
  */
 Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
+  [x, y] = pos;
+  [dx, dy] = dir;
+  piecesToFlip = [];
+
+  if(this.grid[x+dx][y+dy].oppColor() === color){
+    piecesToFlip.push(grid[x+dx][y+dy]);
+  }
+
+  //base cases
+    // if grid[x+dx][y+dy] is empty
+    // if grid[x+dx][y+dy] is out of bounds
+    // if (!this.grid[x+dx][y+dy] || !isValidPos([x+dx, y+dy]))
+    //   return [];
+    // } 
+    // else if (this.grid[x+dx][y+dy].color === color){ 
+    //   // if grid[x+dx][y+dy] is same color
+    //   return piecesToFlip;
+    // }
+
+  // return Board._positionsToFlip([x+dx, y+dy],color,dir,piecesToFlip);
 };
 
 /**
