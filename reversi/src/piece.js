@@ -19,9 +19,9 @@ function Piece (color) {
  */
 Piece.prototype.oppColor = function () {
     if(this.color === "black"){
-        this.color = "white";
+        return "white";
     } else {
-        this.color = "black";
+        return "black";
     }
 };
 
@@ -29,7 +29,7 @@ Piece.prototype.oppColor = function () {
  * Changes the piece's color to the opposite color.
  */
 Piece.prototype.flip = function () {
-    this.oppColor();
+    this.color = this.oppColor();
 };
 
 /**
@@ -37,6 +37,7 @@ Piece.prototype.flip = function () {
  * based on its color.
  */
 Piece.prototype.toString = function () {
+    return (this.color === "black") ? "B" : "W"
 };
 
 // DON'T TOUCH THIS CODE
